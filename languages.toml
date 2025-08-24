@@ -1,0 +1,20 @@
+[[language]]
+name = "elixir"
+auto-format = true
+
+[[language]]
+name = "heex"
+auto-format = true
+
+[[language]]
+name = "zig"
+auto-format = true
+
+[language-server.ruby-lsp]
+command = "ruby-lsp"
+config = { diagnostics = true, formatting = true }
+
+[[language]]
+name = "ruby"
+language-servers = ["ruby-lsp"]
+auto-format = true

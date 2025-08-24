@@ -1,0 +1,183 @@
+theme = "careful"
+
+[editor]
+bufferline = "multiple"
+cursorline = true
+auto-format = true
+continue-comments = false
+color-modes = true
+trim-final-newlines = true
+trim-trailing-whitespace = true
+indent-guides = { render = true }
+whitespace = { render = "all" }
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "spacer", "version-control"]
+
+[editor.lsp]
+display-inlay-hints = true
+inlay-hints-length-limit = 43
+
+[keys.normal.g]
+"," = ":config-open"
+
+[keys.normal.space]
+"," = ":config-reload"
+
+[keys.normal.m]
+w = "make_search_word_bounded"
+
+[keys.normal]
+# Movement
+C-n = "move_line_down"
+C-p = "move_line_up"
+C-b = "move_char_left"
+C-f = "move_char_right"
+C-a = "goto_first_nonwhitespace"
+C-e = "goto_line_end_newline"
+C-h = ["move_prev_word_start", "collapse_selection"]
+C-A-h = ["move_prev_sub_word_start", "collapse_selection"]
+C-l = ["move_next_word_start", "collapse_selection"]
+C-A-l = ["move_next_sub_word_start", "collapse_selection"]
+# Selection
+C-S-n = "extend_line_down"
+S-down = "extend_line_down"
+C-S-p = "extend_line_up"
+S-up = "extend_line_up"
+C-S-b = "extend_char_left"
+S-left = "extend_char_left"
+C-S-f = "extend_char_right"
+S-right = "extend_char_right"
+C-S-a = "extend_to_first_nonwhitespace"
+S-home = "extend_to_first_nonwhitespace"
+C-S-e = "extend_to_line_end"
+S-end = "extend_to_line_end"
+C-S-h = "extend_prev_word_start"
+C-A-S-h = "extend_prev_sub_word_start"
+C-S-l = "extend_next_word_end"
+C-A-S-l = "extend_next_sub_word_end"
+# Select word
+A-d = "@miw"
+# Cmd-f = "@miw*vn<esc>"
+A-S-d = "@miw*%s<ret>"
+# Delete
+Cmd-x = "delete_selection"
+"backspace" = "delete_selection_noyank"
+# Delete word
+"A-backspace" = "@miw<A-c>"
+# Delete lines
+Cmd-S-k = ["extend_to_line_bounds", "delete_selection_noyank"]
+# Move line
+"A-n" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+"A-down" = "@<A-n>"
+"A-p" = ["extend_to_line_bounds", "delete_selection", "move_visual_line_up", "paste_before"]
+"A-up" = "@<A-p>"
+# Copy lines
+"A-S-n" = ["extend_to_line_bounds", "yank", "paste_after"]
+"A-S-down" = "@<A-S-n>"
+"A-S-p" = ["extend_to_line_bounds", "yank", "paste_before"]
+"A-S-up" = "@<A-S-p>"
+# Join lines
+Cmd-j = "join_selections"
+# Scrolling
+C-j = "scroll_down"
+C-k = "scroll_up"
+# Comment lines
+"Cmd-/" = "toggle_comments"
+# Search
+Cmd-f = "search"
+Cmd-S-f = "global_search"
+# System
+Cmd-p = "file_picker"
+Cmd-S-p = "command_palette"
+Cmd-s = ":write"
+"F5" = ":reload-all"
+Cmd-z = "undo"
+Cmd-S-z = "redo"
+Cmd-y = "redo"
+"C-;" = "collapse_selection"
+"C-," = ["keep_primary_selection", "collapse_selection"]
+C-i = "insert_mode"
+Cmd-C-i = ":tree-sitter-highlight-name"
+# History navigation
+"C-[" = "jump_backward"
+"C-]" = "jump_forward"
+# Buffer navigation
+"A-[" = "goto_previous_buffer"
+"A-]" = "goto_next_buffer"
+# Window navigation
+A-j = "jump_view_down"
+A-k = "jump_view_up"
+A-h = "jump_view_left"
+A-l = "jump_view_right"
+"A-/" = ":vsplit"
+"A-minus" = ":hsplit"
+# CLose
+A-w = ":buffer-close"
+A-S-w = ":buffer-close-others"
+A-q = "wclose"
+A-S-q = "wonly"
+
+# Disable stuff so you are less tempted to be evil
+h = "no_op"
+j = "no_op"
+k = "no_op"
+l = "no_op"
+w = "no_op"
+e = "no_op"
+b = "no_op"
+u = "no_op" # undo is bound to Cmd-z
+U = "no_op" # redo is bound to Cmd-S-z and Cmd-y
+d = "no_op" # delete is bound to backspace and Cmd-x
+C-c = "no_op" # comment line is bound to Cmd-/
+"/" = "no_op" # search is bound to Cmd-f
+
+[keys.insert]
+# Movement
+C-n = "move_line_down"
+C-p = "move_line_up"
+C-b = "move_char_left"
+C-f = "move_char_right"
+C-a = "goto_first_nonwhitespace"
+C-e = "goto_line_end_newline"
+C-h = ["move_prev_word_start", "collapse_selection"]
+C-A-h = ["move_prev_sub_word_start", "collapse_selection"]
+C-l = ["move_next_word_start", "collapse_selection"]
+C-A-l = ["move_next_sub_word_start", "collapse_selection"]
+# Delete lines
+Cmd-S-k = ["extend_to_line_bounds", "delete_selection_noyank"]
+# Join lines
+Cmd-j = "join_selections"
+# Scrolling
+C-j = "scroll_down"
+C-k = "scroll_up"
+# Comment lines
+"Cmd-/" = "toggle_comments"
+# System
+"C-;" = "normal_mode"
+Cmd-s = [":write", "normal_mode"]
+
+[keys.select]
+# Movement
+C-n = "extend_line_down"
+C-p = "extend_line_up"
+C-b = "extend_char_left"
+C-f = "extend_char_right"
+C-a = "extend_to_first_nonwhitespace"
+C-e = "extend_to_line_end"
+C-h = "extend_prev_word_start"
+C-l = "extend_next_word_end"
+# Delete
+backspace = "delete_selection_noyank"
+# Delete lines
+Cmd-S-k = ["extend_to_line_bounds", "delete_selection"]
+# Cut
+Cmd-x = "delete_selection"
+# Scrolling
+C-j = "scroll_down"
+C-k = "scroll_up"
+# Comment lines
+"Cmd-/" = "toggle_comments"
+# System
+"C-;" = "normal_mode"
+Cmd-s = [":write", "normal_mode"]

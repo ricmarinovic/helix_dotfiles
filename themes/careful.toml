@@ -1,0 +1,189 @@
+# user interface -------------------------------------------
+
+"ui.background" = { bg = "background", fg = "foreground" }
+# border below search in pickers
+"ui.background.separator" = { fg = "gray7" }
+"ui.text" = "foreground"
+"ui.text.focus" = { bg = "highlight1", fg = "select_fg", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "gray9" }
+"ui.text.directory" = { fg = "blue" }
+
+# border separating splits
+"ui.window" = { fg = "gray7" }
+
+# modes menus (space, g, etc) borders and title
+"ui.popup.info" = { bg = "panel1", fg = "highlight2" }
+# suggest and command menus
+"ui.menu" = { bg = "panel1", fg = "foreground" }
+"ui.menu.selected" = { bg = "highlight1", fg = "select_fg", modifiers = ["bold"] }
+"ui.menu.scroll" = { bg = "panel1", fg = "gray9" }
+
+# documentation popups (space+k)
+"ui.popup" = { bg = "panel2", fg = "foreground" }
+# bottom help doc (:theme)
+"ui.help" = { bg = "panel2", fg = "foreground" }
+
+# bufferline (shows open buffers) in the top
+"ui.bufferline" = { bg = "inactive_bg", fg = "inactive_fg" }
+"ui.bufferline.active" = { bg = "highlight1", fg = "foreground", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "background" }
+
+# statusline (mode, filename, etc) in the bottom
+"ui.statusline" = { bg = "highlight1", fg = "foreground" }
+"ui.statusline.inactive" = { bg = "inactive_bg", fg = "inactive_fg", modifiers = ["dim"] }
+"ui.statusline.normal" = { bg = "cursor_normal", fg = "background", modifiers = ["bold"] }
+"ui.statusline.insert" = { bg = "cursor_insert", fg = "background", modifiers = ["bold"] }
+"ui.statusline.select" = { bg = "cursor_select", fg = "background", modifiers = ["bold"] }
+
+# picker
+"ui.picker.header" = { bg = "inactive_bg", fg = "inactive_fg" }
+"ui.picker.header.column.active" = { fg = "highlight2", modifiers = ["bold"] }
+"ui.highlight" = { bg = "select2", modifiers = ["bold"] } # highlighted line in the picker preview
+"special" = "highlight2" # picker fuzzy search result
+
+"ui.linenr" = { fg = "gray5" }
+"ui.linenr.selected" = { fg = "foreground", modifiers = ["bold"] }
+
+# cursor and selection
+"ui.cursor" = { bg = "cursor_normal2", fg = "black" }
+"ui.cursor.primary" = { bg = "cursor_normal", fg = "black" }
+"ui.cursor.match" = { fg = "cursor_select2", modifiers = ["bold"] }
+"ui.cursor.primary.normal" = { bg = "cursor_normal", fg = "black" }
+"ui.cursor.primary.insert" = { bg = "cursor_insert", fg = "black" }
+"ui.cursor.primary.select" = { bg = "cursor_select", fg = "black" }
+"ui.cursor.normal" = { bg = "cursor_normal2", fg = "black" }
+"ui.cursor.insert" = { bg = "cursor_insert2", fg = "black" }
+"ui.cursor.select" = { bg = "cursor_select2", fg = "black" }
+
+"ui.cursorline" = { bg = "gray2" }
+
+"ui.selection.primary" = { bg = "select1" }
+"ui.selection" = { bg = "select2" }
+"tabstop" = { bg = "select2" }
+
+# version control
+"diff.plus" = "created"
+"diff.minus" = "deleted"
+"diff.delta" = "modified"
+
+# diagnostics
+"info" = "info"
+"hint" = "hint"
+"warning" = "warning"
+"error" = "error"
+"diagnostic.info" = { underline = { color = "info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "hint", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warning", style = "curl" } }
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+
+# virtual
+"ui.virtual.ruler" = { bg = "gray4" }
+"ui.virtual.indent-guide" = "gray4"
+"ui.virtual.whitespace" = { fg = "gray3" }
+"ui.virtual.jump-label" = { bg = "gray3", fg = "highlight2" }
+
+# syntax highlighting -----------------------------------------------
+
+"comment" = { fg = "gray6", modifiers = ["italic"] }
+"ui.virtual.inlay-hint" = { fg = "gray5" }
+
+"variable" = { fg = "offwhite" }
+"punctuation" = { fg = "offwhite" }
+
+"keyword" = { fg = "white" }
+
+"function" = { fg = "blue" }
+
+"constant.numeric" = { fg = "yellow" }
+"operator" = { fg = "orange"}
+
+"string" = { fg = "green" }
+"string.regexp" = { fg = "lightgreen" }
+"constant.character" = { fg = "lightgreen" }
+
+"namespace" = { fg = "magenta" }
+"type" = { fg = "magenta" }
+"tag" = { fg = "magenta" }
+
+"comment.line.documentation" = { fg = "cyan" }
+"comment.block.documentation" = { fg = "cyan" }
+"variable.other.member" = { fg = "cyan" }
+"string.special.symbol" = { fg = "cyan" }
+"type.builtin" = { fg = "cyan" }
+"attribute" = { fg = "cyan" }
+
+"keyword.control.return" = { fg = "red" }
+"keyword.control.exception" = { fg = "red" }
+"string.escape" = { fg = "red" }
+"constant.character.escape" = { fg = "red" }
+"punctuation.special" = { fg = "red" }
+"keyword.directive" = { fg = "red" }
+"tag.builtin" = { fg = "red" }
+
+"constant" = { fg = "purple" }
+"function.builtin" = { fg = "purple" }
+"function.macro" = { fg = "purple" }
+"function.special" = { fg = "purple" }
+"keyword.control.import" = { fg = "purple" }
+
+# markup
+"markup.heading" = { fg = "cyan", modifiers = ["bold"] }
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "blue", underline = { style = "line" } }
+"markup.link.text" = { fg = "magenta" }
+"markup.link.label" = { fg = "purple" }
+"markup.raw.inline" = { fg = "green" }
+
+[palette]
+background = "#151515"
+foreground = "#cccccc"
+highlight1 = "#5b4587" # statusline, bufferline, picker, menu selections
+highlight2 = "#a26eea" # the highlighted item in fuzzy picker
+inactive_bg = "#303030" # inactive tabs, headers, statusline
+inactive_fg = "#c0c0c0"
+panel1 = "#292735"
+panel2 = "#313244"
+select1 = "#4e455f"
+select2 = "#3b3645"
+select_fg = "#ffffff"
+
+cursor_normal = "#b985db"
+cursor_insert = "#8cdb85"
+cursor_select = "#efb071"
+
+cursor_normal2 = "#76518e"
+cursor_insert2 = "#578e52"
+cursor_select2 = "#dc7a18"
+
+created = "#a6d189"
+modified = "#ebcb8b"
+deleted = "#ff615a"
+
+info = "#83afe5"
+hint = "#83ce4d"
+warning = "#d8a13b"
+error = "#ff615a"
+
+# basic colors
+black = "#000000"
+white = "#ffffff"
+offwhite = "#c0c0c0"
+gray2 = "#202020"
+gray3 = "#303030"
+gray4 = "#404040"
+gray5 = "#505050"
+gray7 = "#707070"
+gray6 = "#666666"
+gray9 = "#909090"
+
+magenta = "#c48ed1"
+blue = "#8ea9d1"
+cyan = "#8b98ac"
+purple = "#867edf"
+red = "#df8c8c"
+green = "#71945c"
+lightgreen = "#90c275"
+yellow = "#ebcb8b"
+orange = "#dba849"
