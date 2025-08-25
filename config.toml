@@ -57,9 +57,10 @@ C-A-S-h = "extend_prev_sub_word_start"
 C-S-l = "extend_next_word_end"
 C-A-S-l = "extend_next_sub_word_end"
 # Select word
-A-d = "@miw"
-# Cmd-f = "@miw*vn<esc>"
-A-S-d = "@miw*%s<ret>"
+d = "@miw" # selects the word currently under the cursor
+D = "@miw*n" # selects the next occurrence of the word under the cursor
+A-d = "@miw*vn<esc>" # adds the next word under the cursor to the section
+A-S-d = "@miw*%s<ret>" # selects all occurrences of the word under the cursor
 # Delete
 Cmd-x = "delete_selection"
 "backspace" = "delete_selection_noyank"
@@ -128,7 +129,6 @@ e = "no_op"
 b = "no_op"
 u = "no_op" # undo is bound to Cmd-z
 U = "no_op" # redo is bound to Cmd-S-z and Cmd-y
-d = "no_op" # delete is bound to backspace and Cmd-x
 C-c = "no_op" # comment line is bound to Cmd-/
 "/" = "no_op" # search is bound to Cmd-f
 
